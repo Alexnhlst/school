@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esempi di Ajax</title>
+  </head>
+  <body>
+    <button id="showLibrary">Show book library</button>
+    <div id="libraryContainer"></div>
+    <script>
+      let libraryContainer = document.getElementById("libraryContainer");
+      document.getElementById("showLibrary").addEventListener("click", () => {
+        if (libraryContainer.innerHTML == "") {
+          let ajax = new XMLHttpRequest();
+          ajax.open("GET", "library.json", true);
+          ajax.onload = () => {
+            if (ajax.status == 200) {
+              let books = JSON.parse(ajax.responseText);
+              let showBooks = "";
+              for (let i in books) {
+                showBooks += `<table border width="500px">
+                  <tr width="150px">
+                    <th width="150px">Title</th>
+                    <th width="150px">Author</th>
+                    <th width="150px">Price</th>
+                  </tr>
+                  <tr>
+                    <td>${books[i].titolo}</td>
+                    <td>${books[i].autore}</td>
+                    <td>${books[i].prezzo}</td>
+                  </tr>
+                  </table>`;
+              }
+              libraryContainer.innerHTML = showBooks;
+            } else if (ajax.status == 404) {
+              libraryContainer.innerHTML = "Resource not found";
+            }
+          };
+          ajax.send();
+        } else {
+          libraryContainer.innerHTML = "";
+        }
+      });
+    </script>
+  </body>
+</html>

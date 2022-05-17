@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello world</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        /* margin: 0 auto; */
+        text-align: center;
+        margin-top: 25%;
+        background-color: #5e80e6;
+      }
+      h1 {
+        font-family: Poppins, sans-serif;
+        color: #fff;
+        font-weight: 800;
+      }
+      span {
+        cursor: pointer;
+      }
+      span:hover {
+        animation: fadeOut ease-in-out 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+      span:not(:hover) {
+        animation: fadeIn ease-in-out 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, <span id="world">world</span></h1>
+    <script>
+      let world = document.getElementById("world");
+      world.addEventListener("click", () => {
+        if (world.innerHTML == "world") {
+          world.innerHTML = "🌍";
+        } else {
+          world.innerHTML = "world";
+        }
+      });
+    </script>
+  </body>
+</html>

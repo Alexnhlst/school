@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <id gender="male">1</id>
+        <firstName>Mario</firstName>
+        <lastName>Rossi</lastName>
+        <email>mario@rossi.it</email>
+    </student>
+    <student>
+        <id gender="female">2</id>
+        <firstName>Carla</firstName>
+        <lastName>Bianchi</lastName>
+        <email>carla@bianchi.it</email>
+    </student>
+    <student>
+        <id gender="male">3</id>
+        <firstName>Giovanni</firstName>
+        <lastName>Verdi</lastName>
+        <email>giovanni@verdi.it</email>
+    </student>
+</students>

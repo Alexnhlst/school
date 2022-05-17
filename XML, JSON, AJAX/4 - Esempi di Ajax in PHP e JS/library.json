@@ -1,0 +1,17 @@
+[
+        {
+            "titolo":"Il signore degli anelli",
+            "autore":"J.R.R. Tolkien",
+            "prezzo":30
+        },
+        {
+            "titolo":"Lo Hobbit",
+            "autore":"J.R.R. Tolkien",
+            "prezzo":18
+        },
+        {
+            "titolo":"Il Silmarillion",
+            "autore":"J.R.R. Tolkien",
+            "prezzo":25
+        }
+    ]

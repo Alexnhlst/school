@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <id>1</id>
+        <firstName>Simone</firstName>
+        <lastName>Bianchi</lastName>
+        <email>simone@email.com</email>
+    </student>
+    <student>
+        <id>2</id>
+        <firstName>Mario</firstName>
+        <lastName>Rossi</lastName>
+        <email>mario@mail.com</email>
+    </student>
+    <student>
+        <id>3</id>
+        <firstName>Carla</firstName>
+        <lastName>Tappi</lastName>
+        <email>carla@email.it</email>
+    </student>
+    <student>
+        <id>4</id>
+        <firstName>Ben</firstName>
+        <lastName>Dover</lastName>
+        <email>bendover@mail.com</email>
+    </student>
+</students>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esempi di Ajax</title>
+  </head>
+  <body>
+    <h1>Mostra uno studente</h1>
+    <button id="getStudente">Studente singolo</button>
+    <button id="hideStudente">Nascondi studente</button>
+    <div id="containerStudente"></div>
+    <h1>Mostra la lista studenti</h1>
+    <button id="getStudenti">Lista studenti</button>
+    <button id="hideStudenti">Nascondi studenti</button>
+    <div id="containerStudenti"></div>
+    <script>
+      document.getElementById("getStudente").addEventListener("click", () => {
+        let ajax = new XMLHttpRequest();
+        ajax.open("GET", "studente.json", true);
+        ajax.onload = () => {
+          if (ajax.status == 200) {
+            let studente = JSON.parse(ajax.responseText);
+            let mostraStudente = "";
+            mostraStudente += `<ul>
+              <li>ID: ${studente.id}</li>
+              <li>Nome: ${studente.nome}</li>
+              <li>Cognome: ${studente.cognome}</li>
+              </ul>`;
+            document.getElementById("containerStudente").innerHTML =
+              mostraStudente;
+          } else if (ajax.status == 400) {
+            document.getElementById("containerStudente").innerHTML =
+              "Risorsa non trovata";
+          }
+        };
+        ajax.send();
+      });
+      document.getElementById("hideStudente").addEventListener("click", () => {
+        document.getElementById("containerStudente").innerHTML = "";
+      });
+      document.getElementById("getStudenti").addEventListener("click", () => {
+        let ajax = new XMLHttpRequest();
+        ajax.open("GET", "studenti.json", true);
+        ajax.onload = () => {
+          if (ajax.status == 200) {
+            let studenti = JSON.parse(ajax.responseText);
+            let mostraStudenti = "";
+            for (let studente in studenti) {
+              mostraStudenti += `<ul>
+              <li>ID: ${studenti[studente].id}</li>
+              <li>Nome: ${studenti[studente].nome}</li>
+              <li>Cognome: ${studenti[studente].cognome}</li>
+              </ul>`;
+            }
+            document.getElementById("containerStudenti").innerHTML =
+              mostraStudenti;
+          } else if (ajax.status == 404) {
+            document.getElementById("containerStudenti").innerHTML =
+              "Risorsa non trovata";
+          }
+        };
+        ajax.send();
+      });
+      document.getElementById("hideStudenti").addEventListener("click", () => {
+        document.getElementById("containerStudenti").innerHTML = "";
+      });
+    </script>
+  </body>
+</html>

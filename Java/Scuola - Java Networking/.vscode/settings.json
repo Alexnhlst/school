@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "Server/Server/src",
+        "Connessione UDP/ClientUDP/src",
+        "Client/Client/src",
+        "Connessione UDP/ServerUDP/src"
+    ]
+}
